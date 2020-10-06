@@ -1,0 +1,19 @@
+{
+  "app.input.city": "Ciudad",
+  "app.input.name": "Nombre",
+  "app.input.district": "Distrito",
+  "app.input.location": "Ubicación",
+  "app.input.class": "clase",
+  "app.input.fee": "cuota",
+  "app.input.board": "tablero",
+  "app.input.Subject": "Sujeta",
+  "app.input.Batchstart": "Inicio por lotes",
+  "app.input.Batchend": "Final de lote",
+  "app.btn.savebtn": "Salvar",
+  "app.btn.cancel": "Cancelar",
+  "app.btn.add": "añadir",
+  "app.btn.update": "actualizar",
+  "app.page.title1": "Institutos",
+  "app.page.title2": "Lotes",
+  "app.page.Institute": "Institutos"
+}

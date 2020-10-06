@@ -1,0 +1,44 @@
+<mat-card>
+  <div class="form">
+    <mat-card-title>{{'app.page.title1' | translate }}</mat-card-title>
+    <button mat-raised-button color="primary" (click)="add()">{{'app.btn.add' | translate }}</button>
+  </div>
+  <form [formGroup]="addinstitute">
+
+    <div *ngIf="addform" style="background-color: #ccc;">
+      <div class="form">
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.input.name' | translate }}</mat-label>
+          <input matInput placeholder="Name" formControlName="name">
+        </mat-form-field>
+      </div>
+      <div class="form" formGroupName="address">
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.input.city' | translate }}</mat-label>
+          <input matInput placeholder="City" formControlName="city">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.input.district' | translate }}</mat-label>
+          <input matInput placeholder="District" formControlName="district">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.input.location' | translate }}</mat-label>
+          <input matInput placeholder="Location" formControlName="latlong">
+          {{latitude}} {{longitude}}
+        </mat-form-field>
+      </div>
+      <div class="btn">
+        <button mat-raised-button color="primary" (click)="save()">{{'app.btn.savebtn' | translate }}</button>
+        <button mat-raised-button color="warn" (click)="add()">{{'app.btn.cancel' | translate }}</button>
+      </div>
+    </div>
+  </form>
+</mat-card>
+<mat-card>
+  <div *ngFor="let institute of instituteList">
+    <h3>{{institute.name}}</h3>
+    <agm-map [latitude]="institute.address.latlong.l_" [longitude]="institute.address.latlong.__">
+      <agm-marker [latitude]="institute.address.latlong.l_" [longitude]="institute.address.latlong.__"></agm-marker>
+    </agm-map>
+  </div>
+</mat-card>

@@ -1,0 +1,19 @@
+{
+  "app.input.city": "City",
+  "app.input.name": "Name",
+  "app.input.district": "District",
+  "app.input.location": "Location",
+  "app.btn.savebtn": "Save",
+  "app.btn.cancel": "Cancel",
+  "app.btn.add": "Add",
+  "app.btn.update": "Update",
+  "app.input.class": "Class",
+  "app.input.fee": "Fee",
+  "app.input.board": "Board",
+  "app.input.Subject": "Subject",
+  "app.input.Batchstart": "Batch start",
+  "app.input.Batchend": "Batch end",
+  "app.page.title1": "Institutes",
+  "app.page.title2": "Batches",
+  "app.page.Institute": "Institute"
+}

@@ -1,0 +1,31 @@
+<mat-toolbar>
+
+  <span>HURREY</span>
+  <span class="example-spacer"></span>
+  <mat-form-field appearance="fill">
+    <mat-label>Language</mat-label>
+    <mat-select (selectionChange)="onstatusChanged($event.value)">
+      <mat-option value="en">En</mat-option>
+      <mat-option value="es">Es</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    {{'wm.app.button.save' | translate }}
+  </button> -->
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <ul>
+      <li>
+        <a routerLink='/institutes' routerLinkActive="active">Institution</a>
+      </li>
+      <li>
+        <a routerLink='/batches' routerLinkActive="active">Batch</a>
+      </li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

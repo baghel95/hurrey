@@ -1,0 +1,77 @@
+<mat-card>
+  <div class="form">
+    <mat-card-title>{{'app.page.title2' | translate }}</mat-card-title>
+    <button mat-raised-button color="primary" (click)="add()">{{'app.btn.add' | translate }}</button>
+  </div>
+  <form [formGroup]="addBatches">
+    <div *ngIf="addform" style="background-color: #ccc;">
+      <div class="form">
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.page.Institute' | translate }}</mat-label>
+          <mat-select formControlName="institute">
+            <mat-option *ngFor="let institute of instituteList" [value]="institute.name">{{institute.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.input.name' | translate }}</mat-label>
+          <input matInput placeholder="Name" formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.input.class' | translate }}</mat-label>
+          <input matInput placeholder="Class" formControlName="class">
+        </mat-form-field>
+      </div>
+      <div class="form">
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.input.fee' | translate }}</mat-label>
+          <input matInput placeholder="Fee" formControlName="fee">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.input.board' | translate }}</mat-label>
+          <input matInput placeholder="Board" formControlName="board">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'app.input.Subject' | translate }}</mat-label>
+          <input matInput placeholder="Subject" formControlName="subject">
+        </mat-form-field>
+      </div>
+      <div class="form">
+        <mat-form-field color="accent" appearance="legacy">
+          <mat-label>{{'app.input.Batchstart' | translate }}</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="batch_start_time">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field color="accent" appearance="legacy">
+          <mat-label>{{'app.input.Batchend' | translate }}</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="batch_end_time">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="btn">
+        <button mat-raised-button color="primary" *ngIf="editData"
+          (click)="update()">{{'app.btn.update' | translate }}</button>
+        <button mat-raised-button color="primary" *ngIf="addData"
+          (click)="save()">{{'app.btn.savebtn' | translate }}</button>
+        <button mat-raised-button color="warn" (click)="add()">{{'app.btn.cancel' | translate }}</button>
+      </div>
+    </div>
+  </form>
+</mat-card>
+<mat-card>
+  <div *ngFor="let batche of batchesList">
+    <div class="form" style="background: #ccc; margin: 10px;">
+      <div>
+        <p>{{batche.institute}}</p>
+        <p>{{batche.name}}</p>
+      </div>
+      <div>
+        <p>{{batche.batch_start_time.seconds  | date: fullDate}}</p>
+        <p>{{batche.batch_end_time.seconds | date: fullDate}}</p>
+        <button mat-raised-button color="primary" (click)="edit(batche)">update</button>
+      </div>
+    </div>
+
+  </div>
+</mat-card>
